@@ -1,6 +1,7 @@
 package TrieuDuyTan;
 
 import java.util.*;
+
 public class NhanVien extends Nguoi{
 	protected String maNV;
 	protected String maPB;
@@ -40,19 +41,19 @@ public class NhanVien extends Nguoi{
 		this.luong = luong;
 	}
 	
-	public void nhapNV() {
+	public void nhapNV(NhanVien _Tues) {
 		Scanner nv  = new Scanner(System.in);
-		nhap();
+		nhap(_Tues);
 		System.out.print("Ma NV: ");
-		maNV = nv.nextLine();
+		_Tues.setMaNV(nv.nextLine());
 		System.out.print("Ma PB: ");
-		maPB = nv.nextLine();
+		_Tues.setMaPB(nv.nextLine());
 		System.out.print("Luong : ");
-		luong = nv.nextInt();		
+		_Tues.setLuong(nv.nextInt());;		
 	}
 	
 	public void xuatNV() {
 		xuat();
-		System.out.printf(" - %s - %s - %dk.", maNV, maPB, luong);
+		System.out.printf(" - %s - %s - %dk.", getMaNV(), getMaPB(), getLuong());
 	}
 }
