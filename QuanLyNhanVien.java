@@ -21,7 +21,6 @@ public class QuanLyNhanVien extends NhanVien {
 //	public int QuanLyNhanVien(int soNV) {
 //		return soNV;
 //	}
-	
 //	final static int max = 100;
 //	NhanVien[] nv = new NhanVien[max];
 	
