@@ -1,6 +1,4 @@
 package TrieuDuyTan;
-
-
 import java.util.*;
 
 public class Nguoi {
@@ -11,20 +9,15 @@ public class Nguoi {
 	
 	protected static int SumDS = 0;
 
-	
-//	public Nguoi(String string, String string2, int i) {
-//		// TODO Auto-generated constructor stub
-//	}
-
 	public void Nguoi() {	
 	}
-
 	public String getHoTen() {
-		return hoTen;
+		return hoTen.trim();
 	}
 
 	public void setHoTen(String hoTen) {
 		this.hoTen = hoTen;
+		
 	}
 
 	public String getDiaChi() {
@@ -49,23 +42,19 @@ public class Nguoi {
 		this.namSinh = namSinh;
 	}
 	
-	public void nhap() {
+	public void nhap(Nguoi _phu) {
 		Scanner sc = new Scanner(System.in);
+		
 		System.out.print("\nHo Ten: ");
-		this.hoTen = sc.nextLine();
-		this.hoTen = hoTen.trim();
+		_phu.setHoTen(sc.nextLine());
+		
 		System.out.print("Dia chi: ");
-		this.diaChi = sc.nextLine();		
+		_phu.setDiaChi(sc.nextLine());		
 		System.out.print("Nam sinh: ");
-		this.namSinh = sc.nextInt();
+		_phu.setNamSinh(sc.nextInt());
 		
 		SumDS += 1;
 	}
-	
-//	public void xuat() {
-//		System.out.print(">> ");
-//		System.out.printf("[%s] - %s - %d", this.hoTen, this.diaChi, this.namSinh);
-//	}
 	
 	public void xuat() {
 		System.out.print(" >> ");
@@ -74,10 +63,8 @@ public class Nguoi {
 	
 	public void tinhTuoi() {
 		int tuoi;
-		tuoi = 2022 - this.namSinh;
-		
-		System.out.printf(" - %d tuoi", tuoi);
-		
+		tuoi = 2022 - this.namSinh;		
+		System.out.printf(" - %d tuoi", tuoi);		
 	}
 	
 }
