@@ -4,49 +4,40 @@ import java.util.*;
 
 public class QuanLyNhanVien extends NhanVien {	
 	protected int soNV;
+	Scanner Hua = new Scanner(System.in);
 	
 	public int getSoNV(int soNV) {
 		return soNV;
 	}
-
+	public QuanLyNhanVien() {
+	}
 	public QuanLyNhanVien(int soNV) {
 		this.soNV = soNV;
-	}
-	public void setSoNV(int soNV) {
-		this.soNV = soNV;
-	}
-//	public void QuanLyNhanVien(int soNV) {
-//		this.soNV = soNV;
-//	}
-//	public int QuanLyNhanVien(int soNV) {
-//		return soNV;
-//	}
-//	final static int max = 100;
-//	NhanVien[] nv = new NhanVien[max];
-	
+	}	
+
+	NhanVien[] nv = null;
 	public void NhapDSNV() {
-		NhanVien[] nv = new NhanVien[soNV];
-		Scanner Huahua = new Scanner(System.in);
-		int a = nv.length;		System.out.printf("\n[%d]\n", a);
+		System.out.print("Nhap vao so nhan vien: ");
+		soNV = Hua.nextInt();
+		nv = new NhanVien[soNV];
 		
 		for(int i = 0; i < soNV; i++) {
 			System.out.printf("Nhap vao thong tin nhan vien thu %d: ", i+1);
-			nv[i].nhapNV(); // ????????????????????????
-		}
+			nv[i] = new NhanVien();
+			nhapNV(nv[i]);
+		}	
 	}
 	
 	public void XuatDSNV() {
-		NhanVien[] nv = new NhanVien[soNV];
 		System.out.println("\n           DANH SACH NHAN VIEN\n");
-		System.out.println("[STT]: >> Ho Ten - Dia Chi - Nam Sinh - MaNV - MaBP - Luong\n");
+		System.out.println("[STT]: >> Ho Ten - Dia Chi - Nam Sinh - MaNV - MaBP - Luong");	
 		for(int i = 0; i < soNV; i++) {
 			System.out.printf("\n[%d]: ", i+1); 
 			nv[i].xuatNV();
 		}
 	}
-	
+
 	public void LuongReduce() {
-		NhanVien[] nv = new NhanVien[soNV];
 	    NhanVien Tuesday;
 	    for(int i = 0; i < soNV; i++){
 	        for(int j = i + 1; j < soNV; j++){
@@ -57,6 +48,8 @@ public class QuanLyNhanVien extends NhanVien {
 	            }
 	        }
 	    }
+	    
+	    XuatDSNV();
 	}
 	
 }
